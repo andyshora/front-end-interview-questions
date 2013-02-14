@@ -437,7 +437,18 @@ When messing around on jsfiddle or debugging code perhaps!
 
 Challenges
 ----------
-1. Write a simple slideshow page. Bonus points for no JS.
+1. Write a function to reverse a string
+http://jsfiddle.net/andyshora/8zby5/
+```javascript
+// a function to reverse a string
+function reverseString(str){
+    if (str===undefined) return false;
+    if (str.length < 2) return str;
+    
+    return str.split('').reverse().join('');
+}
+document.write(reverseString("hello"));
+```
 2. Implement a function to detect palindromes.
 3. Calculate the number of digits for a given number.
 4. Implement a function that calculates square roots
