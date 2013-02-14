@@ -80,6 +80,34 @@ var Car = new function(){
 var ford = new Car();
 ```
 
+this and its scope
+-----------
+```javascript
+drink = 'soda'; //global variable
+
+var Foo = function(){
+    this.drink = 'beer'; //property of instance object
+    console.log('Foo() -> ' + this.drink);
+};
+
+function bar(){
+    console.log('bar() -> ' + this.drink);
+};
+
+var qux = {
+    drink: 'wine', // in the scope of qux, 'drink' = 'wine'
+    getDrink: function(){
+        console.log('qux() -> ' + this.drink);
+    }
+};
+
+//now see how "this' differs in each case
+                    
+var baz = new Foo(); // Foo() -> beer
+bar(); // bar() -> soda
+qux.getDrink(); // qux() -> wine
+```
+
 
 What is a closure?
 --------
@@ -123,6 +151,35 @@ sum.apply(null, data); // 6
 Why use frameworks?
 ---------
 Good coders code, great coders reuse. Thousands of man hours have been poured into these libraries to abstract DOM capabilities away from browser specific implementations. There's no reason to go through all of the different browser DOM headaches yourself just to reinvent the fixes.
+
+Why use prototype to define methods instead of static methods?
+---------
+You are extending the constructor function when you use prototype, so it will be available to all the object instances created with the new keyword, and the context within that function (the this keyword) will refer to the actual object instance where you call it.
+
+```javascript
+// constructor function
+function MyClass () {
+  var privateVariable; // private member only available within the constructor fn
+
+  this.privilegedMethod = function () { // it can access private members
+    //..
+  };
+}
+
+// A 'static method', it's just like a normal function 
+// it has no relation with any 'MyClass' object instance
+MyClass.staticMethod = function () {};
+
+MyClass.prototype.publicMethod = function () {
+  // the 'this' keyword refers to the object instance
+  // you can access only 'privileged' and 'public' members
+};
+
+var myObj = new MyClass(); // new object instance
+
+myObj.publicMethod();
+MyClass.staticMethod();
+```
 
 Public, private and privaledged members in JavaScript
 ---------
