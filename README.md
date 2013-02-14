@@ -1,20 +1,6 @@
 Interview Questions for Front-end Developers
 =============================
 
-
-
-Implement a function that calculates square roots
-Sort and concat arrays in a optimal way
-Guess the two missing numbers in a array with n - 2 length containing 1..n unsorted numbers
-Calculate the number of digits for a given number
-Implement a function to detect palindromes
-What is a closure and which disadvantages has
-What is hoisting
-How does this work
-How float works and which issues have
-How does the event loop work on the browser and how to delay a function to the next tick
-How to optimize CSS, and how does specificity work
-
 How do you validate your markup and why?
 --------
 W3C validator.
@@ -34,6 +20,20 @@ How do you waste time in JavaScript?
 --------
 Redraw parts of the DOM, e.g. increase font-size in a loop.
 See http://www.bennadel.com/blog/2370-Overcoming-Asynchronous-Anxiety-By-Testing-JavaScript-s-Event-Loop.htm
+
+Explain hoisting in JavaScript
+--------
+Within its current scope, regardless of where a variable is declared, it will be, behind the scenes, hoisted to the top. However, only the declaration will be hoisted. If the variable is also initialized, the current value, at the top of the scope, will initially be set to undefined.
+
+``javascript
+ var myvar = 'my value';
+(function() {
+  alert(myvar); // undefined
+  var myvar = 'local value'; // only the declararion of the variable (var myvar) was hoisted to the top of the scoope
+})();
+```
+Above, the declaration was hoisted, but the initialization ( = 'local value') was not, resulting in an undefined error.
+
 
 What is the difference between var x = 1 and x = 1?
 --------
@@ -422,8 +422,54 @@ To make things more confusing still, CSS uses the terms "block-level element" an
 
 HTML5 does not use the terms "block-level" or "inline" as part of its content model rules, to reduce confusion with CSS. However, it has more categories than HTML4, and an element can be part of none of them, one of them, or several of them.
 
+Function.prototype.bind
+----------
+
+
+Can you explain how inheritance works in JavaScript?
+----------
+Explain how scope works.
+
+When would you use document.write()?
+----------
+When messing around on jsfiddle or debugging code perhaps!
+
 
 Challenges
 ----------
-Write a simple slideshow page. Bonus points for no JS.
+1. Write a simple slideshow page. Bonus points for no JS.
+2. Implement a function to detect palindromes.
+3. Calculate the number of digits for a given number.
+4. Implement a function that calculates square roots
+http://jsfiddle.net/andyshora/W5Gzj/2/
+```javascript
+// function to manually calculate square root in javascript
+// returns false on error or no integer square root
+function calcSquareRoot(x){
+    
+    if (typeof x !== 'number') return false;
+    if (x===1) return x; // test for 1, quickest = doesnt mess with logic below
+    if (i<0) return false;
+    
+    for(var i=2; i<=(x/2); i++){
+        if (i*i === x) return i;
+    }
+    
+    return false;
+}
 
+document.write(calcSquareRoot(225)); // 15
+document.write('<br />');
+document.write(calcSquareRoot(226)); // false
+document.write('<br />');
+document.write(calcSquareRoot(-1)); // false
+document.write('<br />');
+document.write(calcSquareRoot(1)); // 1
+document.write('<br />');
+document.write(calcSquareRoot('2')); // false
+document.write('<br />');
+document.write(calcSquareRoot(4)); // 2
+```
+
+5. Sort and concat arrays in a optimal way
+6. Guess the two missing numbers in a array with n - 2 length containing 1..n unsorted numbers
