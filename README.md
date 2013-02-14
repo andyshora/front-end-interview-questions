@@ -292,6 +292,14 @@ end user browser preferences are respected
 
 Can you describe the difference between progressive enhancement and graceful degradation?
 ----------
+Describe feature detection.
+When features are not supported, maintain accessibility.
+Content should always be accessible, but user experience sacrificed for older browsers. Try to keep all functionality, and try to keep custom solutions compartmentalised where necessary, for example, in external files loaded for specific browsers.
+
+If you have 10 different stylesheets for a given design, how would you integrate them into the site?
+----------
+File concatenation and minification in the build process.
+Don't use @import as it results in an additional request.
 
 
 What is FOUC? How do you avoid FOUC?
@@ -397,3 +405,25 @@ Example LESS template - colorscheme.less
 CSS3 Advantages with LESS
 -----------
 Long repetitive CSS3 code such as gradients, keyframe animations, can all be simplified with Mixins, taking in for example keyframe durations, percentages, animation and easing types as parameters. For gradients, start and stop colours, and blending positions can be controlled with variables.
+
+How does the content model differ in HTML4/5?	http://www.w3.org/TR/html5-diff/#content-model
+------------
+Content model is what defines how elements may be nested — what is allowed as children (or descendants) of a certain element.
+
+At a high level, HTML4 had two major categories of elements, "inline" (e.g. span, img, text), and "block-level" (e.g. div, hr, table). Some elements did not fit in either category.
+
+Some elements allowed "inline" elements (e.g. p), some allowed "block-level" elements (e.g. body), some allowed both (e.g. div), while other elements did not allow either category but only allowed other specific elements (e.g. dl, table), or did now allow any children at all (e.g. link, img, hr).
+
+Notice the difference between an element itself being in a certain category, and having a content model of a certain category. For instance, the p element is itself a "block-level" element, but has a content model of "inline".
+
+To make it more confusing, HTML4 had different content model rules in its Strict, Transitional and Frameset flavors. For instance, in Strict, the body element allowed only "block-level" elements, but in Transitional, it allowed both "inline" and "block-level".
+
+To make things more confusing still, CSS uses the terms "block-level element" and "inline-level element" for its visual formatting model, which is related to CSS's 'display' property and has nothing to do with HTML's content model rules.
+
+HTML5 does not use the terms "block-level" or "inline" as part of its content model rules, to reduce confusion with CSS. However, it has more categories than HTML4, and an element can be part of none of them, one of them, or several of them.
+
+
+Challenges
+----------
+Write a simple slideshow page. Bonus points for no JS.
+
