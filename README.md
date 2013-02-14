@@ -57,6 +57,7 @@ They only appear interchangeable if the parent objects are the same
 
 Write a function to add arguments together
 ---------
+```javascript
 function sum() {
   var i, l, result = 0;
   for (i = 0, l = arguments.length; i < l; i++) {
@@ -66,12 +67,12 @@ function sum() {
 }
 
 sum(1,2,3); // 6
-
+```
 And they should invoke it on your array like this (context for apply can be whatever, I usually use null in that case):
-
+```javascript
 var data = [1,2,3];
 sum.apply(null, data); // 6
-
+```
 
 Why use frameworks?
 ---------
@@ -79,17 +80,18 @@ Good coders code, great coders reuse. Thousands of man hours have been poured in
 
 Public, private and privaledged members in JavaScript
 ---------
-
-Private
+```javascript
+//Private
 
 // Constructor
 function Kid (name) {
 	// Private
 	var idol = "Paris Hilton";
 }
-
+```
 
 You can delete or replace a privileged method, but you cannot alter its contents.
+```javascript
 // Constructor
 function Kid (name) {
 	// Private
@@ -100,10 +102,10 @@ function Kid (name) {
 		return idol;
 	};
 }
-
+```
 
 A static member is shared by all instances of the class as well as the class itself (i.e. the Kid object), but it is only stored in one place. This means that its value is not inherited down to the object’s instances
-
+```javascript
 // Constructor
 function Kid (name) {
 	// Constructor code
@@ -113,7 +115,7 @@ function Kid (name) {
 Kid.town = "South Park";
 
 
-Public
+// Public
 // Constructor
 function Kid (name) {
 	// Public
@@ -170,6 +172,7 @@ cartman.town; // undefined
 
 // Access static property on the constructor object
 Kid.town; // "South Park"
+```
 
 See http://robertnyman.com/2008/10/14/javascript-how-to-get-private-privileged-public-and-static-members-properties-and-methods/
 
@@ -204,13 +207,14 @@ To define the language of a section of the document, add the lang attribute to t
 
 How do you serve a page with content in multiple languages?
 ----------
+```html
 <div lang="fr-CA" xml:lang="fr-CA">
  Canadian French content...
  </div>
  <div lang="en-CA" xml:lang="en-CA">
  Canadian English content...
  </div>
-
+```
  What's the difference between Java and JavaScript?
  ---------
  Here are some differences between the two languages:
