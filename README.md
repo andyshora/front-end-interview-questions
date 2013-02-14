@@ -457,7 +457,6 @@ function calcSquareRoot(x){
     
     return false;
 }
-
 document.write(calcSquareRoot(225)); // 15
 document.write('<br />');
 document.write(calcSquareRoot(226)); // false
