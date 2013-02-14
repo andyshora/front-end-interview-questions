@@ -15,6 +15,20 @@ How float works and which issues have
 How does the event loop work on the browser and how to delay a function to the next tick
 How to optimize CSS, and how does specificity work
 
+How do you validate your markup and why?
+--------
+W3C validator.
+100% valid code is not always the goal, but it helps to write maintainable code.
+To ensure the code is rendered consistently cross-browser.
+
+Why use a Doctype?
+--------
+A proper Doctype triggers standards mode in your browser.
+
+What is CDATA?
+--------
+Used to be required to escape JavaScript in Doctypes prior to HTML5 in order to validate code.
+
 
 How do you waste time in JavaScript?
 --------
@@ -43,6 +57,7 @@ A closure is formed when you nest functions, inner functions can refer to the va
 What language is JavaScript based on?
 --------
 ECMAScript = core language that JS is based on.
+
 
 What's the difference between a variable and a property?
 --------
@@ -215,6 +230,7 @@ How do you serve a page with content in multiple languages?
  Canadian English content...
  </div>
 ```
+
  What's the difference between Java and JavaScript?
  ---------
  Here are some differences between the two languages:
@@ -274,3 +290,22 @@ How would you organize a LESS library for a large project?
 - interface.less — mixins for interface features like buttons, forms, and dialogs
 - layout.less — design-specific layout of the site
 - style.less — the main stylesheet, including all of the above and adding in whatever site-specific styles are otherwise necessary
+
+Example LESS template - colorscheme.less
+------------
+```css
+@background: 		#ffffff;
+@textcolor: 		#252525;
+@textcolor-strong:	#090909;
+@textcolor-em:		#666666;
+@textcolor-blockquote:	#aaaaaa;
+
+@accent1:		#2d9681;
+@accent2:		#f8a34b;
+
+@warning:		#d4230f;
+```
+
+CSS3 Advantages with LESS
+-----------
+Long repetitive CSS3 code such as gradients, keyframe animations, can all be simplified with Mixins, taking in for example keyframe durations, percentages, animation and easing types as parameters. For gradients, start and stop colours, and blending positions can be controlled with variables.
