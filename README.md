@@ -1,4 +1,4 @@
-front-end-interview-questions
+Interview Questions for Front-end Developers
 =============================
 
 
@@ -48,6 +48,14 @@ http://sharkysoft.com/tutorials/jsa/content/031.html
 http://schalk-neethling.com/2011/07/quick-tip-the-problem-with-implied-globals-in-javascript/
 http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting
 http://stackoverflow.com/questions/1484143/scope-chain-in-javascript
+
+Are objects passed by reference or by value?
+-----------
+By reference. In JavaScript, all objects are passed by reference. When you make a change to a reference to an object, you change the actual object. Primitive types are passed by value.
+
+Is an Array an Object in JavaScript?
+-----------
+Yes, Arrays inherit from Objects, and they have array-specific methods such as sort and length.
 
 
 What is a closure?
