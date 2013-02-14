@@ -25,7 +25,7 @@ Explain hoisting in JavaScript
 --------
 Within its current scope, regardless of where a variable is declared, it will be, behind the scenes, hoisted to the top. However, only the declaration will be hoisted. If the variable is also initialized, the current value, at the top of the scope, will initially be set to undefined.
 
-``javascript
+```javascript
  var myvar = 'my value';
 (function() {
   alert(myvar); // undefined
