@@ -57,6 +57,29 @@ Is an Array an Object in JavaScript?
 -----------
 Yes, Arrays inherit from Objects, and they have array-specific methods such as sort and length.
 
+What is the difference between using dot notation and bracket notation when accessing an object’s property?
+-----------
+```javascript
+val = ford.speed; // speed has to be a defined property
+
+val = ford['speed']; 
+val = ford[ attr ]; // attr is a variable which may for example hold a string for the property name
+val = ford[ nextAttr() ]; // method call will return before accessing ford object
+```
+
+Why might a programmer have defined a variable with a capital letter?
+-----------
+As a constructor for an Object. Instance names should be lower case.
+```javascript
+// example
+
+var Car = new function(){
+	this.wheels = 4;
+}
+// instance of Car
+var ford = new Car();
+```
+
 
 What is a closure?
 --------
