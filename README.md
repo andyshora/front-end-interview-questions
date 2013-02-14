@@ -450,6 +450,25 @@ function reverseString(str){
 document.write(reverseString("hello"));
 ```
 2. Implement a function to detect palindromes.
+http://jsfiddle.net/andyshora/WN2Bv/
+```javascript
+// function to detect palindromes
+function isPalindrome(str){
+    if (typeof str!=='string') return false;
+    if (!str.length) return false;
+    
+    var len = str.length;
+    var arr = str.split(''); // split string into array
+    var breakAt = Math.floor(len/2);
+    
+    for (var i=0; i<len; i++){
+        if (i===breakAt) break;
+        if (arr[i]!==arr[(len-1)-i]) return false;
+    }
+    return true;
+}
+document.write(isPalindrome('aaaaabaaaaa'));
+```
 3. Calculate the number of digits for a given number.
 4. Implement a function that calculates square roots
 http://jsfiddle.net/andyshora/W5Gzj/2/
