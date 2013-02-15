@@ -59,6 +59,19 @@ Is an Array an Object in JavaScript?
 -----------
 Yes, Arrays inherit from Objects, and they have array-specific methods such as sort and length.
 
+Explain bit shifting in JavaScript
+----------
+Operands are treated as 32-bit integers. 
+http://jsfiddle.net/andyshora/M4xAB/
+```javascript
+var temp;
+temp = 5 >> 1; // 101 -> 10 = 2
+temp = 8 >> 1; // 1000 -> 100 = 4
+temp = 10 >> 1; // 1010 -> 101 = 5
+// test
+document.write(temp);
+```
+
 What is the difference between using dot notation and bracket notation when accessing an object’s property?
 -----------
 ```javascript
