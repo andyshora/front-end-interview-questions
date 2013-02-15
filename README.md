@@ -23,6 +23,8 @@ See http://www.bennadel.com/blog/2370-Overcoming-Asynchronous-Anxiety-By-Testing
 
 Explain hoisting in JavaScript
 --------
+In JavaScript function declarations ( function foo() {} ) and variable declarations ( var bar  ) are ‘hoisted’ i.e. are silently moved to the very top of the scope.
+
 Within its current scope, regardless of where a variable is declared, it will be, behind the scenes, hoisted to the top. However, only the declaration will be hoisted. If the variable is also initialized, the current value, at the top of the scope, will initially be set to undefined.
 
 ```javascript
@@ -301,6 +303,19 @@ If you have 10 different stylesheets for a given design, how would you integrate
 File concatenation and minification in the build process.
 Don't use @import as it results in an additional request.
 
+How would you reduce page load time/perceived load time?
+----------
+Reduce image sizes
+Use image sprites
+Image datauris inline for small things like avatars
+Concatenate assets
+Host assets on different hostnames
+Use CDN for assets
+Load content async and feedback loading state to user
+Minify scripts and stylesheets
+Page data
+Cache files
+
 
 What is FOUC? How do you avoid FOUC?
 ----------
@@ -327,9 +342,15 @@ How do you serve a page with content in multiple languages?
  </div>
 ```
 
- What's the difference between Java and JavaScript?
- ---------
- Here are some differences between the two languages:
+Probably use a CMS to serve up different content, but same styles.
+
+What are data- attributes good for?
+---------
+Storing data in the DOM
+
+What's the difference between Java and JavaScript?
+---------
+Here are some differences between the two languages:
 
 Java is an OOP programming language while Java Script is an OOP scripting language.
 Java creates applications that run in a virtual machine or browser while JavaScript code is run on a browser only.
