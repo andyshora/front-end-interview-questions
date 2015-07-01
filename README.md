@@ -196,7 +196,7 @@ myObj.publicMethod();
 MyClass.staticMethod();
 ```
 
-Public, private and privaledged members in JavaScript
+Public, private and priviledged members in JavaScript
 ---------
 ```javascript
 //Private
